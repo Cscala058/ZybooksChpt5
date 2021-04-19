@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class InterstateHighway {
+    public static void main(String[] args) {
+        Scanner scnr = new Scanner(System.in);
+        int highwayNumber;
+        int primaryNumber;
+        highwayNumber = scnr.nextInt();
+        if(highwayNumber >= 1 && highwayNumber <= 99){
+            if(highwayNumber % 2 == 0)
+                System.out.printf("I-%d is primary, going east/west.\n",highwayNumber);
+            else
+                System.out.printf("I-%d is primary, going north/south.\n",highwayNumber);
+        }
+        else if(highwayNumber >= 100 && highwayNumber <= 999){
+            primaryNumber = highwayNumber % 100;
+            if(primaryNumber % 2 == 0)
+                System.out.printf("I-%d is auxiliary, serving I-%d, going east/west.\n",highwayNumber, primaryNumber);
+            else
+                System.out.printf("I-%d is auxiliary, serving I-%d, going north/south.\n",highwayNumber, primaryNumber);
+        }
+        else
+            System.out.printf("%d is not a valid interstate highway number.\n",highwayNumber);
+    }
+}
