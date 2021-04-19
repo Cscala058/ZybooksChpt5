@@ -1,0 +1,33 @@
+public class TollCalculation {
+    public double calcToll(int hour, boolean isMorning, boolean isWeekend) {
+        double toll = 0;  
+        if(!isWeekend) {
+            if(hour < 7 && isMorning)
+                toll = 1.15;
+            else if(7 <= hour && hour < 10 && isMorning)
+                toll = 2.95;
+            else if((10 <= hour && hour < 12 && isMorning) || (12 <= hour && hour < 3 && !isMorning))
+                toll = 1.90;
+            else if(3 <= hour && hour < 8 && !isMorning)
+                toll = 3.95;
+            else
+                toll = 1.40;
+        }
+        else {
+            if(hour < 7 && isMorning)
+                toll = 1.05;
+            else if(hour >= 8 && !isMorning)
+                toll = 1.10;
+            else
+                toll = 2.15;
+        }
+        return toll;
+    }
+    public static void main(String[] args) {
+        TollCalculation tollObj = new TollCalculation();
+        System.out.println(tollObj.calcToll(7, true, false));
+        System.out.println(tollObj.calcToll(1, false, false));
+        System.out.println(tollObj.calcToll(3, false, true));
+        System.out.println(tollObj.calcToll(5, true, true));
+    }
+}
