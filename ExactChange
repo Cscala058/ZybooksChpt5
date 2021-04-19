@@ -1,0 +1,67 @@
+import java.util.Scanner;
+
+public class ExactChange {
+
+   public static void main(String[] args) {
+       Scanner reader = new Scanner(System.in);
+       int input = reader.nextInt();
+       reader.close();
+       if(input <= 0) {
+           System.out.println("No change");
+           return;
+       }
+       int   dollars = 0;
+       int quarters = 0;
+       int dimes = 0;
+       int nickels = 0;
+       int pennies = 0;
+      
+       dollars = input / 100;
+       input = input % 100;
+       quarters = input / 25;
+       input = input % 25;
+       dimes = input / 10;
+       input = input % 10;
+       nickels = input / 5;
+       pennies = input % 5;
+       if(0 == dollars && 0 == quarters && 0 == dimes && 0 == nickels && 0 == pennies) {
+           System.out.println("No change");
+           return;
+       }
+       if(dollars > 0) {
+           if(1 == dollars) { 
+               System.out.println("1 Dollar");
+           } else { 
+               System.out.println(dollars + " Dollars");
+           }
+       }
+       if(quarters > 0) {
+           if(1 == quarters) {
+               System.out.println("1 Quarter");
+           } else { 
+               System.out.println(quarters + " Quarters");
+           }
+       }
+       if(dimes > 0) {
+           if(1 == dimes) {
+               System.out.println("1 Dime");
+           } else { 
+               System.out.println(dimes + " Dimes");
+           }
+       }
+       if(nickels > 0) {
+           if(1 == nickels) {
+               System.out.println("1 Nickel");
+           } else { 
+               System.out.println(nickels + " Nickels");
+           }
+       }
+       if(pennies > 0) {
+           if(1 == pennies) { // Print singular for 1
+               System.out.println("1 Penny");
+           } else {
+               System.out.println(pennies + " Pennies");
+           }
+       }
+   }
+}
