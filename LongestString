@@ -1,0 +1,32 @@
+import java.util.Scanner;
+class LongestString {
+public String findLongest(String str1,String str2){
+if(str1.length()==str2.length()){
+return str2;
+}
+else{
+
+return str1.length()>str2.length()?str1:str2;
+
+}
+
+}
+
+public static void main(String[] args) {
+LongestString obj = new LongestString();
+Scanner sc = new Scanner(System.in);
+
+String str1;
+
+String str2;
+str1=sc.next();
+
+str2=sc.next();
+
+String longest;
+longest=obj.findLongest(str1,str2);
+System.out.println(longest);
+
+}
+
+}
