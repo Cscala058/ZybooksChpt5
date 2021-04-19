@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class FunWithCharacters {
+
+   public static void main(String[] args) {
+      
+      FunWithCharacters labObject = new FunWithCharacters();
+      String word = "happy birthday"; 
+      int index = 2; 
+      System.out.println(labObject.checkCharacter(word, index));
+      
+      index = 5; 
+      System.out.println(labObject.checkCharacter(word, index));
+      
+      word = "happy birthday 2 you"; 
+      index = 15; 
+      System.out.println(labObject.checkCharacter(word, index));
+      
+      word = "happy birthday!"; 
+      index = 14; 
+      System.out.println(labObject.checkCharacter(word, index));
+   }
+}
