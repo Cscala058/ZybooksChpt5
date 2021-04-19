@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class Branches{
+    public static void main(String args[]){
+        Scanner scnr = new Scanner(System.in);
+        int hoursAmPm,minAmPm,hours24=0;
+        String AmPm;
+      
+        hoursAmPm = scnr.nextInt();
+        minAmPm = scnr.nextInt();
+        AmPm = scnr.next();
+      
+        if(AmPm.compareTo("am") == 0){
+            if (hoursAmPm == 12) hours24 = 0;
+            else hours24 = hoursAmPm;
+        }
+        else if(AmPm.compareTo("pm") == 0){
+            if (hoursAmPm == 12) hours24 = 12;
+            else hours24 = hoursAmPm + 12;
+        }
+      
+        System.out.printf("%s:%s",String.format("%02d",hours24), String.format("%02d",minAmPm));
+        scnr.close();
+        System.out.println("");
+    }
+}
