@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class GolfScores {
+    public String golfScore(int par, int strokes){
+        // if par is not = 3 or 4 or 5, return "Error"
+        if(par<3 || par > 5){
+            return "Error";
+        }
+        // if strokes is two less than par
+        if(par-strokes == 2){
+            return "Eagle";
+        }
+        else if(par-strokes == 1){
+            // if strokes is one < than par
+            return "Birdie";
+        }
+        else if(par == strokes){
+            // if strokes is = par
+            return "Par";
+        }
+        // if strokes is one > par
+        return "Bogey";
+    }
+   
+   public static void main(String[] args) {
+      GolfScores score = new GolfScores();
+      Scanner scnr = new Scanner(System.in);
+      int par;
+      int strokes;
+      String name;
+      
+      par = scnr.nextInt();
+      strokes = scnr.nextInt();   
+      name = score.golfScore(par, strokes);
+      System.out.println(name);
+   }
+}
